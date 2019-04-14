@@ -149,7 +149,7 @@ class TtnDataStorage:
         self.data = data[-1]
 
         for value in self._values:
-            if value not in self._data or not self._data[value]:
+            if value not in self.data or not self.data[value]:
                 _LOGGER.warning("sensor %s value not available: %s", self._device_id, value)
 
         return req
