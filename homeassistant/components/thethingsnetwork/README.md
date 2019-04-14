@@ -7,7 +7,7 @@ binary_sensor:
   - platform: thethingsnetwork
     device_id: XXXX
     values:
-	   - gate_open
+       - gate_open
 ```
 
 ## Change collection of data
@@ -17,7 +17,7 @@ binary_sensor:
 ```yaml
   - platform: thethingsnetwork
     device_id: catena-4450-1
-	poll_interval: 30
+    poll_interval: 30
     values:
         tempC: '°C'
         tDewC: '°C'
@@ -49,14 +49,14 @@ binary_sensor:
 ```yaml
   - platform: thethingsnetwork
     device_id: catena-4450-1
-	poll_interval: 30
+    poll_interval: 30
     values:
         tempC: '°C'
         tDewC: '°C'
         rh: "%"
         p: mb
         irradiance_IR: 'W/m^2'
-		irradiance_White: W/m^2'
-		irradiance_UV: W/m^2'
+        irradiance_White: W/m^2'
+        irradiance_UV: W/m^2'
         vBat: V
 ```
