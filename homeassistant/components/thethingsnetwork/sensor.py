@@ -78,7 +78,7 @@ class TtnDataSensor(Entity):
         if self._ttn_data_storage.data is not None:
             try:
                 return round(self._state[self._value], 1)
-            except KeyError:
+            except (KeyError, TypeError):
                 pass
 
     @property
@@ -148,8 +148,8 @@ class TtnDataStorage:
         data = await req.json()
         self.data = data[-1]
 
-        for value in self._values.items():
-            if value[0] not in self.data.keys():
-                _LOGGER.warning("Value not available: %s", value[0])
+        for value in self._values:
+            if value not in self._data or not self._data[value]:
+                _LOGGER.warning("sensor %s value not available: %s", self._device_id, value)
 
         return req
